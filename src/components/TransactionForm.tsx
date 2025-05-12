@@ -18,7 +18,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onTransactionAdded })
   const [quantity, setQuantity] = useState('');
 
   useEffect(() => {
-    axios.get('https://egg-inventory-backend.harmoneelabs.com//packs')
+    axios.get('https://egg-inventory-backend.harmoneelabs.com/packs')
       .then(response => setPacks(response.data))
       .catch(error => console.error('Error fetching packs:', error));
   }, []);
@@ -26,7 +26,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ onTransactionAdded })
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('https://egg-inventory-backend.harmoneelabs.com//api/transactions', {
+      await axios.post('https://egg-inventory-backend.harmoneelabs.com/api/transactions', {
         pack_id: parseInt(packId),
         quantity: parseInt(quantity),
       });
