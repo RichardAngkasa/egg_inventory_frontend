@@ -13,7 +13,7 @@ const TransactionTable: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/transactions')
+    axios.get('https://egg-inventory-backend.harmoneelabs.com//transactions')
       .then(response => setTransactions(response.data))
       .catch(error => console.error('Error fetching transactions:', error));
   }, []);

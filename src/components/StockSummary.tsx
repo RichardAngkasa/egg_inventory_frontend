@@ -11,7 +11,7 @@ const StockSummary: React.FC = () => {
   const [packs, setPacks] = useState<Pack[]>([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/packs')
+    axios.get('https://egg-inventory-backend.harmoneelabs.com//packs')
       .then(response => 
         (
           setPacks(response.data),

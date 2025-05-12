@@ -18,7 +18,7 @@ const DailyReport: React.FC = () => {
   const [report, setReport] = useState<DailyReportData>({ transactions: [], total_profit: 0 });
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/transactions/today')
+    axios.get('https://egg-inventory-backend.harmoneelabs.com//transactions/today')
       .then(response => setReport(response.data))
       .catch(error => console.error('Error fetching report:', error));
   }, []);
